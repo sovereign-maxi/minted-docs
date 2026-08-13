@@ -1,6 +1,6 @@
 # Overview
 
-MINTED is a Chaumian blind-signature eCash mint on Bitcoin's Lightning Network, denominated in sats. Tokens are bearer instruments; the mint signs blinded messages it cannot see and later verifies unblinded signatures it cannot trace back to the signing request. The reference implementation is Tor-native by default, runs as a hidden service throughout, and uses a single-node architecture with WAL-backed durability and encrypted-at-rest keysets. Reserves are Lightning balances tracked against outstanding token liability, with signed proofs published on a cadence.
+MINTED specifies a Chaumian blind-signature eCash mint on Bitcoin's Lightning Network, denominated in sats. Tokens are bearer instruments; a conforming mint signs blinded messages it cannot see and later verifies unblinded signatures it cannot trace back to the signing request. The reference implementation is Tor-native by default, uses a single-node architecture with WAL-backed durability, and encrypts keysets at rest. Reserves are Lightning balances tracked against outstanding token liability, with signed proofs published on a cadence.
 
 - **Deposit fee** — 0.75% (7,500 ppm), collected upfront
 - **Withdrawal fee** — 0% mint fee; user pays only the Lightning routing fee, passed through

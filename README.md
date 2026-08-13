@@ -2,7 +2,7 @@
 
 Reference specification for the MINTED Chaumian eCash mint.
 
-MINTED is a Chaumian blind-signature eCash mint on Bitcoin's Lightning Network, denominated in sats. Tokens are bearer instruments; the mint signs blinded messages it cannot see and later verifies unblinded signatures it cannot trace back to the signing request. Tor hidden service throughout. Single-node architecture with WAL-backed durability and encrypted-at-rest keysets. Reserves are Lightning balances tracked against outstanding token liability, with signed proofs published on a cadence.
+MINTED specifies a Chaumian blind-signature eCash mint on Bitcoin's Lightning Network, denominated in sats. Tokens are bearer instruments; a conforming mint signs blinded messages it cannot see and later verifies unblinded signatures it cannot trace back to the signing request. The reference implementation is Tor-native by default, uses a single-node architecture with WAL-backed durability, and encrypts keysets at rest. Reserves are Lightning balances tracked against outstanding token liability, with signed proofs published on a cadence.
 
 Source: [github.com/sovereign-maxi/minted](https://github.com/sovereign-maxi/minted)
 
@@ -30,12 +30,11 @@ Source: [github.com/sovereign-maxi/minted](https://github.com/sovereign-maxi/min
 
 - [Proof of Reserves](proof-of-reserves.md) — HTTP + Nostr, verification code
 - [Nostr Event Schemas](nostr-schemas.md) — kind 30078 reserves attestations
-- [Warrant Canary](warrant-canary.md) — canary format + verification
 
 ### Operational
 
 - [Rate Limiting & PoW](rate-limiting.md) — the request-gate
-- [Published Libraries](published-libraries.md) — cashew, nutty, and friends
+- [Published Libraries](published-libraries.md) — the crypto + storage + Lightning primitives
 
 ### Reference
 
