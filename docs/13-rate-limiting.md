@@ -11,7 +11,7 @@ A conforming mint MUST rate-limit requests per anonymous per-request identifier 
 
 ## Reference implementation
 
-The reference implementation delegates all rate-limit storage and abuse-cost issuance to the [Seer](./published-libraries.md) library.
+The reference implementation delegates all rate-limit storage and abuse-cost issuance to the [Seer](./14-published-libraries.md) library.
 
 - **Circuit hash** — Anonymous per-request identifier Seer extracts from the request envelope. Never the IP address. Never the user agent.
 - **Operation class** — Requests are classified cheap, medium, or expensive. The class drives the rate budget and the PoW difficulty.

@@ -14,7 +14,7 @@
 
 - **Compromised endpoint** — If your device is compromised (keylogger, malware, screen capture), an attacker can read tokens straight out of your browser's localStorage. Universal limitation across every wallet that stores value on the client. Use a clean device, ideally a dedicated Tor Browser session.
 - **Lost tokens** — No recovery by design. Enabling recovery would mean tying the account to something else the architecture doesn't collect. Lose the tokens without a backup and the value goes with them, the way physical cash does.
-- **Dishonest mint (fully)** — Blind signatures protect privacy, not custody. A mint could sign tokens without receiving deposits (unbacked liabilities) or refuse to pay withdrawals. This is exactly why [proof of reserves](./proof-of-reserves.md) is publishable and verifiable. Verify. Withdraw if the numbers don't add up.
+- **Dishonest mint (fully)** — Blind signatures protect privacy, not custody. A mint could sign tokens without receiving deposits (unbacked liabilities) or refuse to pay withdrawals. This is exactly why [proof of reserves](./11-proof-of-reserves.md) is publishable and verifiable. Verify. Withdraw if the numbers don't add up.
 - **Lightning liquidity** — Withdrawals require the paying mint's Lightning node to have sufficient outbound channel capacity. If liquidity is temporarily constrained, a specific withdrawal may fail; the tokens remain valid and can be spent later or at a smaller amount.
 - **Mint downtime** — If a mint is offline you cannot deposit, withdraw, or swap against it until it returns. Tokens remain valid; a mint can be rebuilt from seed and backup on new infrastructure with the same keyset.
 

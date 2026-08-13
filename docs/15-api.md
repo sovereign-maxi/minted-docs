@@ -324,7 +324,7 @@ Reports whether each proof is spent, pending, or unspent, keyed by the Y-point (
 
 Latest signed proof of reserves.
 
-Returns the most recent reserves attestation as a signed JSON object. See [Proof of Reserves](./proof-of-reserves.md) for the field-by-field reference.
+Returns the most recent reserves attestation as a signed JSON object. See [Proof of Reserves](./11-proof-of-reserves.md) for the field-by-field reference.
 
 **Auth:** None.
 
@@ -470,4 +470,4 @@ curl --socks5-hostname 127.0.0.1:9050 \
 
 ## Rate Limiting
 
-Every endpoint runs behind the request gate documented in [Rate Limiting & PoW](./rate-limiting.md). Sensible clients cache reserves responses for at least the proof-cycle interval; per-second polling is unnecessary and wasteful.
+Every endpoint runs behind the request gate documented in [Rate Limiting & PoW](./13-rate-limiting.md). Sensible clients cache reserves responses for at least the proof-cycle interval; per-second polling is unnecessary and wasteful.

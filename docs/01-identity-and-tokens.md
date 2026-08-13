@@ -7,4 +7,4 @@ The protocol has no accounts. There is no email, password, keyphrase, or session
 - **No recovery** — There is no "forgot password" flow because there is no password. If you lose the tokens without a backup, the value is gone the way physical cash is gone.
 - **Peer-to-peer transferable** — The `cashuA...` token string can be copied and handed to anyone through any channel. The recipient redeems at the mint without either party revealing an identity.
 
-See [Token Format](./token-format.md) for the wire encoding and [Deposit Flow](./deposit-flow.md) for how a token is issued.
+See [Token Format](./08-token-format.md) for the wire encoding and [Deposit Flow](./05-deposit-flow.md) for how a token is issued.

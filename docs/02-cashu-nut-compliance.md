@@ -13,4 +13,4 @@ The protocol implements the **Cashu NUT** (Notation, Usage, and Terminology) spe
 - **[NUT-08](https://github.com/cashubtc/nuts/blob/main/08.md)** — Lightning fee return. Melt overpayment (routing fee lower than quoted) is returned as change tokens signed against blank outputs supplied at melt time.
 - **[NUT-12](https://github.com/cashubtc/nuts/blob/main/12.md)** — DLEQ proofs. Every blind signature carries a Discrete Log Equality proof so clients can verify the mint used the correct private key without seeing it.
 
-Payload formats and per-endpoint schemas are defined by the individual NUT specifications above. Protocol-specific extensions (proof of reserves) are documented in [Proof of Reserves](./proof-of-reserves.md).
+Payload formats and per-endpoint schemas are defined by the individual NUT specifications above. Protocol-specific extensions (proof of reserves) are documented in [Proof of Reserves](./11-proof-of-reserves.md).

@@ -18,4 +18,4 @@ The blinding factor `r` is destroyed after unblinding. Even a mint that logged e
 
 ## Reference implementation
 
-Server-side BDHKE is implemented as a Rust NIF in [Cashew](./published-libraries.md) for constant-time secp256k1 operations. Client-side blinding and unblinding run in the browser via [Nutty](./published-libraries.md) compiled to WebAssembly — the blinding factor never leaves the client.
+Server-side BDHKE is implemented as a Rust NIF in [Cashew](./14-published-libraries.md) for constant-time secp256k1 operations. Client-side blinding and unblinding run in the browser via [Nutty](./14-published-libraries.md) compiled to WebAssembly — the blinding factor never leaves the client.
