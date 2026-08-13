@@ -10,5 +10,6 @@ The reference implementation is built from a set of standalone primitives, each 
 - **[Oracle](https://github.com/sovereign-maxi/oracle)** — Shared price-feed primitives for the display-only BTC/USD figure in the wallet UI.
 - **[Seer](https://github.com/sovereign-maxi/seer)** — Anti-sybil primitives — PoW challenges, rate limiting, circuit extraction. Sits between Tor and the mint.
 - **[Vault](https://github.com/sovereign-maxi/vault)** — Reserve proof generation, attestation, and deficit detection. Powers the `/v1/reserves` endpoint.
+- **[Blueprint](https://github.com/sovereign-maxi/blueprint)** — Shared design system: CSS custom properties, LiveView function components, and formatting helpers. Products layer their own accent colour and product-specific styles on top.
 
 The [MINTED reference implementation](https://github.com/sovereign-maxi/minted) composes these into a working mint. Fork any primitive independently or the whole set together.
