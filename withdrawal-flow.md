@@ -19,4 +19,6 @@ Converting eCash tokens back into Bitcoin ([NUT-05](https://github.com/cashubtc/
 
 ## Settlement Resolution
 
-Lightning payments occasionally have ambiguous outcomes (payment stuck in flight past the timeout, the Lightning node briefly unresponsive at the wrong moment). The mint refuses to guess: the quote enters an unknown-settlement state and the proofs stay reserved (fail-closed) rather than being released early. A background resolver then polls the Lightning node every 60 seconds for quotes older than 10 minutes and either commits the reservation (payment did settle) or releases it (payment did not). Most stuck quotes resolve automatically within minutes.
+Lightning payments occasionally have ambiguous outcomes (payment stuck in flight past the timeout, the Lightning node briefly unresponsive at the wrong moment). A conforming mint MUST refuse to guess: the quote enters an unknown-settlement state and the proofs stay reserved (fail-closed) rather than being released early. A background resolver eventually queries the Lightning node and either commits the reservation (payment did settle) or releases it (payment did not).
+
+The reference implementation runs the resolver every 60 seconds for quotes older than 10 minutes; most stuck quotes clear within minutes.

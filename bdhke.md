@@ -1,6 +1,6 @@
 # BDHKE Protocol
 
-Blind Diffie-Hellman Key Exchange on secp256k1: the modern elliptic-curve adaptation of Chaum's 1982 blind signature scheme. The mint signs blinded messages it cannot inspect and later verifies unblinded signatures it cannot correlate with the signing request. The unlinkability is a mathematical property of the scheme, not a policy.
+Blind Diffie-Hellman Key Exchange on secp256k1: the modern elliptic-curve adaptation of Chaum's 1982 blind signature scheme. A mint signs blinded messages it cannot inspect and later verifies unblinded signatures it cannot correlate with the signing request. The unlinkability is a mathematical property of the scheme, not a policy.
 
 1. **Blinding (client)**
    The client generates a secret `x` and a random blinding factor `r`. Computes `Y = hash_to_curve(x)` and the blinded message `B' = Y + rG`, where `G` is the secp256k1 generator. Only `B'` ever leaves the client; `x`, `Y`, and `r` stay local.
@@ -16,4 +16,6 @@ Blind Diffie-Hellman Key Exchange on secp256k1: the modern elliptic-curve adapta
 
 The blinding factor `r` is destroyed after unblinding. Even a mint that logged every blinded message it ever signed cannot determine which unblinded token corresponds to which request — the link never existed.
 
-Server-side BDHKE is implemented as a Rust NIF in [Cashew](./published-libraries.md). Client-side blinding and unblinding run in the browser via [Nutty](./published-libraries.md) compiled to WebAssembly — the blinding factor never leaves the client.
+## Reference implementation
+
+Server-side BDHKE is implemented as a Rust NIF in [Cashew](./published-libraries.md) for constant-time secp256k1 operations. Client-side blinding and unblinding run in the browser via [Nutty](./published-libraries.md) compiled to WebAssembly — the blinding factor never leaves the client.

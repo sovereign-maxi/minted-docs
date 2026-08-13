@@ -1,6 +1,6 @@
 # Public Endpoints
 
-Cashu-standard JSON endpoints at the `.onion` hidden service, with no authentication and no user-identifying data exposed. All endpoints return `application/json; charset=utf-8`. Route through Tor SOCKS at `127.0.0.1:9050` (Tor Browser's default) or torsocks.
+Cashu-standard JSON endpoints with no authentication and no user-identifying data exposed. All endpoints return `application/json; charset=utf-8`. The protocol is transport-agnostic — a mint may serve these endpoints over any HTTP transport. The reference implementation deploys as a Tor hidden service; the `curl` examples below assume that shape (route through Tor SOCKS at `127.0.0.1:9050` — Tor Browser's default — or `torsocks`). A mint on clearnet is the same API without the SOCKS hop.
 
 ## GET /v1/info
 
@@ -116,7 +116,7 @@ curl --socks5-hostname 127.0.0.1:9050 \
 
 Request a deposit quote (NUT-04).
 
-Returns a bolt11 Lightning invoice for the requested amount plus the 0.75% fee (plus any splice-fee uplift if the amount exceeds inbound liquidity).
+Returns a bolt11 Lightning invoice for the requested amount plus the mint's configured fee (plus any splice-fee uplift if the amount exceeds inbound liquidity).
 
 **Auth:** None.
 

@@ -2,7 +2,7 @@
 
 A conforming mint publishes proof of reserves through **two independent verification paths**:
 
-- **HTTP endpoint** — `GET /v1/reserves`: current proof, queryable anytime via Tor. Read-only, no auth. Paginated history at `/v1/reserves/history?limit=N`.
+- **HTTP endpoint** — `GET /v1/reserves`: current proof, queryable anytime over the mint's chosen transport (Tor or clearnet). Read-only, no auth. Paginated history at `/v1/reserves/history?limit=N`.
 - **Nostr NIP-33 events** — Kind 30078 replaceable events published to configured relays each cycle. Same numbers, tamper-evident historical record cross-signable against the HTTP surface.
 
 The `ratio` field (held ÷ outstanding) is the number to watch: `≥ 1.0` means fully backed. A drop below 1.0 should never happen; if it does, treat as under-collateralised and stop depositing.
@@ -37,7 +37,7 @@ Fields:
 - **`held`** — Total sats held in the mint's Lightning channels at snapshot time.
 - **`outstanding`** — Total outstanding eCash liability, in sats. Computed as `minted - burned` from the liability counter.
 - **`proof`** — Hex-encoded proof-cycle identifier. Uniquely identifies this attestation across the history.
-- **`attestation_count`** — Number of signer attestations that combined to produce the threshold signature. 1 in a single-node deployment (the mint is its own signer).
+- **`attestation_count`** — Number of signer attestations that combined to produce the threshold signature. 1 for single-signer deployments; N for threshold deployments.
 - **`threshold_signature`** — Hex-encoded Ed25519 signature over `Vault.Proof.canonical_bytes/1`. The signer pubkey validates against this.
 - **`nostr_event_id`** — Hex-encoded ID of the matching Nostr kind:30078 event. Cross-reference: fetch the event from a relay, verify its BIP-340 signature under the publisher pubkey, confirm the content matches.
 - **`verifier`** — Names the pubkeys, curves, and signature input for both signatures the reader is expected to validate. Two curves, two purposes: never validate the Ed25519 threshold signature with the secp256k1 Nostr pubkey, or vice versa.

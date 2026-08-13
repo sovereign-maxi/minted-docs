@@ -4,7 +4,7 @@ The protocol defines one kind of event for public consumption on Nostr and addit
 
 ## Kind 30078 — Reserves Attestation
 
-NIP-33 addressable event carrying the mint's proof-of-reserves attestation. Published each proof cycle under the mint's Nostr signing key. The event `content` field is a JSON-encoded string on the wire; shown here as a nested object for readability.
+NIP-33 addressable event carrying the mint's proof-of-reserves attestation. Emitted each proof cycle under the mint's Nostr signing key. The event `content` field is a JSON-encoded string on the wire; shown here as a nested object for readability.
 
 ```json
 {
