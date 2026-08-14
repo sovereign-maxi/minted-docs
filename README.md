@@ -1,4 +1,4 @@
-# MINTED Protocol
+# MINTED - Protocol
 
 Reference specification for the MINTED Chaumian eCash mint.
 
